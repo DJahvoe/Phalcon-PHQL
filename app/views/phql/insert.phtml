@@ -1,0 +1,9 @@
+<?php
+echo $this->tag->linkTo(["/", "Back", 'class' => 'btn btn-danger']);
+if ($result->success()) {
+    echo "Inserting Data Success";
+} else {
+    foreach ($result->getMessages() as $message) {
+        echo $message->getMessage();
+    }
+}

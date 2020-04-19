@@ -1,0 +1,148 @@
+<!-- <div class="container">
+    <h1>Hello!</h1>
+
+    <button class="btn btn-primary">Query</button>
+</div> -->
+
+<div class="container">
+    <h1>PHQL (Phalcon Query Language)</h1>
+
+    <hr>
+    <h2>Query</h2>
+    <form action="phql/query">
+
+        <button type="submit" class="btn btn-primary">Open</button>
+    </form>
+
+    <hr>
+    <h2>Model Manager</h2>
+    <form action="phql/modelmanager">
+
+        <button type="submit" class="btn btn-primary">Open</button>
+    </form>
+
+    <hr>
+    <h2>Model Manager (Bound Parameter)</h2>
+    <form action="phql/boundparam">
+        <div class="form-group">
+            <label for="hostel_id">Hostel ID</label>
+            <input type="text" class="form-control" id="hostel_id" name="hostel_id" placeholder="Hostel ID">
+        </div>
+        <button type="submit" class="btn btn-primary">Open</button>
+    </form>
+
+    <hr>
+    <h2>Aliases</h2>
+    <form action="phql/aliases">
+        <button type="submit" class="btn btn-primary">Open</button>
+    </form>
+
+    <hr>
+    <h2>Aggregation</h2>
+    <form action="phql/aggregate">
+        <div class="form-group">
+            <label for="city">City Name</label>
+            <input type="text" class="form-control" id="city" name="city" placeholder="City Name (ex. Tokyo, Osaka)">
+        </div>
+        <button type="submit" class="btn btn-primary">Open</button>
+    </form>
+
+    <hr>
+    <h2>Insert</h2>
+    <form action="phql/insert" method="post">
+        <div class="form-group">
+            <label for="hostel_name">Hostel Name</label>
+            <input type="text" class="form-control" id="hostel_name" name="hostel_name" placeholder="Hostel Name">
+        </div>
+        <div class="form-group">
+            <label for="city">City Name</label>
+            <input type="text" class="form-control" id="city" name="city" placeholder="City Name (ex. Tokyo, Osaka)">
+        </div>
+        <div class="form-group">
+            <label for="price_from">Price From</label>
+            <input type="number" class="form-control" id="price_from" name="price_from" placeholder="Price From">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <hr>
+    <h2>Update</h2>
+    <form action="phql/update" method="post">
+        <div class="form-group">
+            <label for="ID">Hostel ID</label>
+            <input type="text" class="form-control" id="ID" name="ID" placeholder="Hostel ID">
+        </div>
+        <div class="form-group">
+            <label for="target_column">Target Column</label>
+            <select class="form-control" id="target_column" name="target_column">
+                <option value="hostel_name">Hostel Name</option>
+                <option value="city">City</option>
+                <option value="price_from">Price From</option>
+                <option value="summary_score">Summary Score</option>
+                <option value="rating_band">Rating Band</option>
+                <option value="atmosphere">Atmosphere</option>
+                <option value="cleanliness">Cleanliness</option>
+                <option value="facilities">Facilities</option>
+                <option value="location_y">Location Y-Coord</option>
+                <option value="security">Security</option>
+                <option value="staff">Staff</option>
+                <option value="valueformoney">Value for Money</option>
+                <option value="distance">Distance</option>
+                <option value="lon">Longitude</option>
+                <option value="lat">Latitude</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="new_value">New Value</label>
+            <input type="text" class="form-control" id="new_value" name="new_value" placeholder="New Value">
+        </div>
+        <button type="submit" class="btn btn-warning">Update</button>
+    </form>
+
+    <hr>
+    <h2>Delete</h2>
+    <form action="phql/delete">
+        <div class="form-group">
+            <label for="ID">Hostel ID</label>
+            <input type="text" class="form-control" id="ID" name="ID" placeholder="Hostel ID">
+        </div>
+
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+
+    <hr>
+    <h2>Query Builder</h2>
+    <form action="phql/querybuilder">
+        <button type="submit" class="btn btn-primary">Open</button>
+    </form>
+
+    <hr>
+    <h2>Disable Literal</h2>
+    <form action="phql/disableliteral">
+        <div class="form-group">
+            <label for="ID">Hostel ID</label>
+            <input type="text" class="form-control" id="ID" name="ID" placeholder="Hostel ID">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <hr>
+    <h2>Reserved Words</h2>
+    <form action="phql/reservedwords">
+        <button type="submit" class="btn btn-primary">Open</button>
+    </form>
+
+    <hr>
+    <h2>Raw SQL</h2>
+    <form action="phql/rawsql">
+        <div class="form-group">
+            <label for="ID">Hostel ID</label>
+            <input type="text" class="form-control" id="ID" name="ID" placeholder="Hostel ID">
+        </div>
+        <button type="submit" class="btn btn-primary">Open</button>
+    </form>
+    <hr>
+
+</div>

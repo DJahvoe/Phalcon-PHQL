@@ -1,0 +1,13 @@
+<?php
+echo $this->tag->linkTo(["/", "Back", 'class' => 'btn btn-danger']);
+if ($status->success()) {
+    if ($result->count() > 0) {
+        echo "Data berhasil dihapus";
+    } else {
+        echo "Data dengan ID tersebut tidak ditemukan";
+    }
+} else {
+    foreach ($result->getMessages() as $message) {
+        echo $message->getMessage();
+    }
+}

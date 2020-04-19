@@ -1,0 +1,58 @@
+<?php
+
+// var_dump($result);
+if ($result->count() > 0) {
+?>
+    <table class="table table-bordered table-hover">
+        <thead class="thead-light">
+            <tr>
+                <td colspan="1"><?php echo $this->tag->linkTo(["/", "Back", 'class' => 'btn btn-danger']); ?></td>
+                <td colspan="11">Results quantity: <?php echo $result->count(); ?></td>
+            </tr>
+            <tr>
+                <th>ID</th>
+
+                <th>Name</th>
+                <th>City</th>
+                <th>Price From (Yen)</th>
+
+                <th>Atmosphere</th>
+                <th>Cleanliness</th>
+                <th>Facilities</th>
+                <th>Security</th>
+                <th>Staff</th>
+                <th>Value for Money</th>
+
+                <th>Summary Score</th>
+                <th>Rating Band</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td colspan="12">Results quantity: <?php echo $result->count(); ?></td>
+            </tr>
+        </tfoot>
+        <tbody>
+            <?php foreach ($result as $data) { ?>
+                <tr>
+                    <td><?php echo $data->ID; ?></td>
+
+                    <td><?php echo $data->hostel_name; ?></td>
+                    <td><?php echo $data->city; ?></td>
+                    <td><?php echo $data->price_from; ?></td>
+
+                    <td><?php echo $data->atmosphere; ?></td>
+                    <td><?php echo $data->cleanliness; ?></td>
+                    <td><?php echo $data->facilities; ?></td>
+                    <td><?php echo $data->security; ?></td>
+                    <td><?php echo $data->staff; ?></td>
+                    <td><?php echo $data->valueformoney; ?></td>
+
+                    <td><?php echo $data->summary_score; ?></td>
+                    <td><?php echo $data->rating_band; ?></td>
+                </tr>
+            <?php } ?>
+        </tbody>
+    </table>
+<?php
+}

@@ -1,0 +1,90 @@
+<table class="table table-bordered table-hover">
+    <thead class="thead-light">
+        <tr>
+            <td colspan="1"><?php echo $this->tag->linkTo(["/", "Back", 'class' => 'btn btn-danger']); ?></td>
+            <td colspan="11">Price Aggregation for <?php echo $city; ?></td>
+        </tr>
+        <tr>
+            <th>Count Data</th>
+            <th>Average Price</th>
+            <th>Min Price</th>
+            <th>Max Price</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <td colspan="12">Price Aggregation for <?php echo $city; ?></td>
+        </tr>
+    </tfoot>
+    <tbody>
+        <tr>
+            <?php
+            if ($result->count() > 0) {
+            ?>
+                <td><?php echo $result[0]['hostel_count']; ?></td>
+                <td><?php echo $result[0]['price_average']; ?></td>
+                <td><?php echo $result[0]['price_min']; ?></td>
+                <td><?php echo $result[0]['price_max']; ?></td>
+            <?php
+            } ?>
+        </tr>
+    </tbody>
+</table>
+
+<?php
+
+// var_dump($result);
+if ($datas->count() > 0) {
+?>
+    <table class="table table-bordered table-hover">
+        <thead class="thead-light">
+            <tr>
+                <td colspan="12">Results quantity: <?php echo $datas->count(); ?></td>
+            </tr>
+            <tr>
+                <th>ID</th>
+
+                <th>Name</th>
+                <th>City</th>
+                <th>Price From (Yen)</th>
+
+                <th>Atmosphere</th>
+                <th>Cleanliness</th>
+                <th>Facilities</th>
+                <th>Security</th>
+                <th>Staff</th>
+                <th>Value for Money</th>
+
+                <th>Summary Score</th>
+                <th>Rating Band</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td colspan="12">Results quantity: <?php echo $datas->count(); ?></td>
+            </tr>
+        </tfoot>
+        <tbody>
+            <?php foreach ($datas as $data) { ?>
+                <tr>
+                    <td><?php echo $data->ID; ?></td>
+
+                    <td><?php echo $data->hostel_name; ?></td>
+                    <td><?php echo $data->city; ?></td>
+                    <td><?php echo $data->price_from; ?></td>
+
+                    <td><?php echo $data->atmosphere; ?></td>
+                    <td><?php echo $data->cleanliness; ?></td>
+                    <td><?php echo $data->facilities; ?></td>
+                    <td><?php echo $data->security; ?></td>
+                    <td><?php echo $data->staff; ?></td>
+                    <td><?php echo $data->valueformoney; ?></td>
+
+                    <td><?php echo $data->summary_score; ?></td>
+                    <td><?php echo $data->rating_band; ?></td>
+                </tr>
+            <?php } ?>
+        </tbody>
+    </table>
+<?php
+}
