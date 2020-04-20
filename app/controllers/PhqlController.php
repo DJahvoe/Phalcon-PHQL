@@ -158,26 +158,26 @@ class PhqlController extends ControllerBase
     public function querybuilderAction()
     {
         // No Parameter
-        $result = $this
-            ->modelsManager
-            ->createBuilder()
-            ->from(Hostels::class)
-            ->orderBy('city')
-            ->getQuery()
-            ->execute();
-
-        // Bound Parameter
         // $result = $this
         //     ->modelsManager
         //     ->createBuilder()
         //     ->from(Hostels::class)
-        //     ->where('ID = :id:')
+        //     ->orderBy('city')
         //     ->getQuery()
-        //     ->execute(
-        //         [
-        //             'id' => 1
-        //         ]
-        //     );
+        //     ->execute();
+
+        // Bound Parameter
+        $result = $this
+            ->modelsManager
+            ->createBuilder()
+            ->from(Hostels::class)
+            ->where('ID = :id:')
+            ->getQuery()
+            ->execute(
+                [
+                    'id' => 1
+                ]
+            );
 
         $this->view->setVar('result', $result);
     }
@@ -186,11 +186,11 @@ class PhqlController extends ControllerBase
     {
         //// Test Injection ' OR '' = '
         //// Activate disableliterals
-        // Model::setup(
-        //     [
-        //         'phqlLiterals' => false
-        //     ]
-        // );
+        Model::setup(
+            [
+                'phqlLiterals' => false
+            ]
+        );
 
 
 
